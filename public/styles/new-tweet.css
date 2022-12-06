@@ -1,0 +1,44 @@
+.new-tweet {
+  padding: 2em 0;
+}
+.form-inline {
+
+}
+.form-inline label {
+  font-size: 1.5em;
+}
+
+.form-inline textarea {
+  background-color: #f4f1ec;
+  outline: none;
+  /* only one line: black bottom border */
+  border-top: none;
+  border-right: none;
+  border-bottom: 5px solid black;
+  border-left: none;
+
+  width: 100%;
+}
+
+.form-inline button {
+  background-color: darkblue; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+.button-output {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+  font-family: 'Bungee', cursive;
+  font-size: 1.5em;
+
+}
+
+
+
