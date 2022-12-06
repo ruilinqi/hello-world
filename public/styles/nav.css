@@ -1,0 +1,43 @@
+nav {
+  height: 120px;
+  width: 100%;
+  /* ? Full width of the viewport */
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+
+  display: flex;
+  justify-content: space-between;/* hor */
+ /* align-items: flex-end;/* up and down */
+  position: fixed;
+}
+
+.tweeter-title{
+  font-size: 2em;
+  padding-bottom: 0em;
+
+  font-family: 'Bungee', cursive;
+  display: flex;
+  align-items: flex-end;
+}
+nav .tweeter-description {
+  color: #FFFFFF;
+  font-size: 1.5em;
+  /*justify-content: flex-start;/* hor */
+
+}
+
+nav .nav-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+
+
+.arrow-red-down {
+  color: red;
+
+}
