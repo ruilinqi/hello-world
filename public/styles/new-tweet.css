@@ -2,10 +2,10 @@
   padding: 2em 0;
 }
 .form-inline {
-
 }
 .form-inline label {
   font-size: 1.5em;
+  font-weight: 600;
 }
 
 .form-inline textarea {
@@ -24,7 +24,7 @@
   background-color: darkblue; /* Green */
   border: none;
   color: white;
-  padding: 2px 5px;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -38,6 +38,10 @@
   font-family: 'Bungee', cursive;
   font-size: 1.5em;
 
+}
+
+.counter {
+  color: black;
 }
 
 
