@@ -27,11 +27,13 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,14 +83,16 @@
           </div>
         </form>
       </section>
-      <section class="all-tweets">
+      <section class="all-tweets" id ="tweets-container">
         <article class="tweet">
           <header class="tweet-header">
-            <img class="tweet-img" src="/images/profile-tweet.png" alt="/images/profile-tweet.png">
-            <h3 class="avatar-name"> Joe </h3>
+            <img class="tweet-img" src="${tweetData.user.avatars}" alt="/images/profile-tweet.png">
+            <h3 class="avatar-name">${tweetData.user.name}</h3>
           </header>
           <section class="tweet-content">
-            <p class="tweet-handle">tweet handle</p>
+            <p class="tweet-handle">${tweetData.user.handle}</p>
+            <p class="tweet-text">${tweetData.content.text}</p>
+
           </section>
           <footer class="tweet-footer">
             <p> date </p>
@@ -96,7 +100,7 @@
               <a href=""><i class="fas fa-flag"></i></a>
               <a href=""><i class="fas fa-retweet"></i></a>
               <a href=""><i class="fas fa-heart"></i></a>
-              
+            </div> 
           </footer>
         </article>
       </section>
