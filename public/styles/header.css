@@ -1,11 +1,9 @@
-header {
+.user-header {
   height: 600px;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #68a9c7;
-
-
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
 
