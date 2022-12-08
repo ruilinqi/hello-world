@@ -1,23 +1,33 @@
 .user-header {
-  height: 600px;
+  height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #68a9c7;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  
 }
 
 .avatar-img {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-top: 200px;
+  padding-top: 80px;
 }
 
 .avatar-name {
   color: #FFFFFF;
   display: flex;
   justify-content: center;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .user-header {
+    margin: 80px 50px;
+    width: 40%;
+    margin-top: 180px;
+  }
 }
 
 

@@ -27,8 +27,19 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-
-.new-tweet {
+ .container {
   margin: 0 auto;
   width: 90%;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .layout {
+    display: flex;
+  }
+  .container {
+    padding: 0 100px;
+    width: 60%;
+    margin-top: 150px;
+  }
 }
