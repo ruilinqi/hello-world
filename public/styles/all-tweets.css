@@ -1,5 +1,7 @@
 .all-tweets {
   background-color: #f4f1ec;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .all-tweets article {
@@ -12,11 +14,11 @@
   box-shadow: 10px 10px rgba(90, 90, 90, 0.4);
 }
 
-.all-tweets article header{
+.all-tweets article header {
   display: flex;
   padding: 0px;
   margin: 0px 0px;
-  align-items: flex-end;
+
 }
 
 .all-tweets h3 {
@@ -27,8 +29,30 @@
 .tweet-content {
   border-bottom: 3px solid #0a0a09;
 }
+.all-tweets article .tweet-header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 60%;
+}
+
+.all-tweets article .tweet-header-right {
+  color:rgba(90, 90, 90, 0.4);
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  width: 40%;
+  margin: 0;
+}
 
 .all-tweets .tweet-handle {
+  margin: 8px;
+
+}
+
+.all-tweets .tweet-text {
   font-weight: 600;
   padding: 20px;
 }

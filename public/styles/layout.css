@@ -28,22 +28,7 @@ body {
  */
 
 
-main {
+.new-tweet {
   margin: 0 auto;
   width: 90%;
-  /*text-align:center;*/
-}
-
-.left-container {
-  float: left;
-  width: 10%;
-  background-color: #f4f1ec;
-
-}
-.right-container {
-  float: right;
-  width: 10%;
-  background-color: #f4f1ec;
-
-
 }

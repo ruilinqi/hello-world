@@ -38,7 +38,18 @@ $(document).ready(function() {
 //console.log(tweetData.user.avatars);
 //console.log('tweet', $tweet); // to see what it looks like
 //$(`#tweets-container`).append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+    // $(".error-massage").css(visibility, hidden);
+    // $(".error-massage").css(display, none);
+  /*
+  function demoDisplay() {
+    document.getElementById("error").style.visibility = "hidden";
+  }
+  demoDisplay();
 
+  const showErrorEle = function () {
+
+  };
+*/
   // Render each tweet
   const renderTweets = function(tweetArr) {
     var $tweets = $('#tweets-container').empty();
@@ -67,8 +78,22 @@ $(document).ready(function() {
   
   // Submit the form
   $(".new-tweet form").submit(function(event) {  
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission behaviour
   
+    
+/*
+    // In case there's no input or 
+    let inputValue = $(".tweet-box").val();
+    if (!inputValue) {
+      //alert("No input. Please type words in the textbox.");
+      $(".slide-down").slideDown("slow");
+    } else if (inputValue.length > 140) {
+      alert("Please enter within 140 characters. Do not exceed the limited word court.");
+      $(".slide-down").slideDown("slow");
+    } 
+      */
+
+    
     $.ajax({
       method: "POST",
       url: '/tweets',

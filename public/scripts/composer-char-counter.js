@@ -15,13 +15,4 @@ $(document).ready(function() {
       $('.counter').css('color', 'red'); // change .counter's css
     }
   });
-
-  function openModalFor(element) {
-    alert('okay');
-  };
-
-  $("div").on('click', function() {
-    openModalFor(this); //The this keyword is a reference to the button
-  });
-
 });
