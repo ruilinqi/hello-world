@@ -23,6 +23,7 @@
   color: #000000;
   font-weight: 300;
   font-size: 1em;
+  padding: 0 10px;
 }
 .tweet-content {
   border-bottom: 3px solid #0a0a09;
@@ -40,14 +41,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-
   width: 40%;
   margin: 0;
 }
 
 .all-tweets .tweet-handle {
   margin: 8px;
-
 }
 
 .all-tweets .tweet-text {
@@ -62,15 +61,14 @@
   font-size: 0.7em;
   padding: 5px 15px 0 15px;
 }
-.all-tweets .tweet-footer .reactions {
+.reactions {
   display: flex;
   flex-direction: row;
 }
-.all-tweets .tweet-footer .reactions a{
+.reactions a{
   padding: 0 5px;
   color:#4056A1;
 }
-
-.all-tweets .tweet-footer .reactions a:hover{
+.reactions a:hover{
   color: rgb(255, 160, 51);
 }

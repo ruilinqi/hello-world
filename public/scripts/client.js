@@ -10,8 +10,8 @@ $(document).ready(function() {
         <article class="tweet">
           <header class="tweet-header">
           <div class="tweet-header-left">
-          <img class="tweet-img" src="${tweetData.user.avatars}" alt="/images/profile-tweet.png">
-          <h3 class="avatar-name">${tweetData.user.name}</h3>
+            <img class="tweet-img" src="${tweetData.user.avatars}" alt="/images/profile-tweet.png">
+            <h3 class="avatar-name">${tweetData.user.name}</h3>
           </div>
           <div class="tweet-header-right">
             <p class="tweet-handle">${tweetData.user.handle}</p>
@@ -32,23 +32,16 @@ $(document).ready(function() {
         </article>`);
     return $tweet;
   };
-
-// Not display the new tweet form at first
-// function formDisplay() {
-//   document.getElementById("tweet-form").style.display = "none";
-// }
-// formDisplay();
-
-// Click the Arrow button to display or hide the tweet form
-const arrowBtn = document.getElementById("arrow");
-
-arrowBtn.addEventListener("click", function() {
-  if ($("#tweet-form").is(":hidden")) {
-    $("#tweet-form").slideDown("fast");
-  } else {
-    $("#tweet-form").slideUp("fast");
-  }
-});
+  
+  // Click the Arrow button to display or hide the tweet form
+  const arrowBtn = document.getElementById("arrow");
+  arrowBtn.addEventListener("click", function() {
+    if ($("#tweet-form").is(":hidden")) {
+      $("#tweet-form").slideDown("fast");
+    } else {
+      $("#tweet-form").slideUp("fast");
+    }
+  });
 
   // Not display the error message at first
   function errorDisplay() {
@@ -56,10 +49,11 @@ arrowBtn.addEventListener("click", function() {
   }
   errorDisplay();
 
-  // 
+  // Define function that slidedown error message, will call it later
   const showErrorEle = function(error) {
     $(".error-massage").text(error);
     $(".error-massage").slideDown("slow");
+    // set time to slide up message after 5 seconds
     setTimeout(() => {
       $(".error-massage").slideUp("slow");
     }, 5000);
@@ -67,7 +61,7 @@ arrowBtn.addEventListener("click", function() {
 
   // Render each tweet
   const renderTweets = function(tweetArr) {
-    var $tweets = $('#tweets-container').empty();
+    const $tweets = $('#tweets-container').empty();
     // loops through tweets
     for (let tweet of tweetArr) {
       // calls createTweetElement for each tweet
@@ -85,8 +79,6 @@ arrowBtn.addEventListener("click", function() {
       data: $(this).serialize(),
       success: function(result) {
         renderTweets(result);
-        // let tweetsFinal = renderTweets(result);
-        // $('#tweet-container').append(tweetsFinal);
       }
     });
   };
@@ -101,24 +93,21 @@ arrowBtn.addEventListener("click", function() {
   $(".new-tweet form").submit(function(event) {
     event.preventDefault(); // Prevent the default form submission behaviour
 
-    // In case there's no input or characters number gets exceed
+    // In case there's no input or characters number gets exceed, call showErrorEle
     let inputValue = $(".tweet-box").val();
     if (!inputValue) {
-      //alert("No input. Please type words in the textbox.");
       showErrorEle("⚠️ No input. Please type words in the textbox.");
       return;
     } else if (inputValue.length > 140) {
-      //alert("Please enter within 140 characters. Do not exceed the limited word court.");
-      showErrorEle("⚠️ Please enter within 140 characters. Do not exceed the limited word court.");
+      showErrorEle("⚠️ Please enter within 140 characters. Do not exceed the limited word count.");
       return;
     }
-
 
     $.ajax({
       method: "POST",
       url: '/tweets',
       data: $(this).serialize(), // Turns a set of form data into a query string
-      success: function (data) {
+      success: function(data) {
         loadTweets(data);
         // Reset the text box and counter
         $('.new-tweet form')[0].reset();

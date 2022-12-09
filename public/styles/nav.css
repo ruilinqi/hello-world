@@ -1,14 +1,12 @@
 nav {
   height: 120px;
   width: 100%;
-  /* ? Full width of the viewport */
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em;
 
   display: flex;
-  justify-content: space-between;/* hor */
- /* align-items: flex-end;/* up and down */
+  justify-content: space-between;
   position: fixed;
 }
 
@@ -39,16 +37,14 @@ nav .nav-right {
   padding-bottom: 10px;
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
+/* Medium devices (landscape tablets, 768px and down) */
 @media only screen and (max-width: 768px) {
   nav {
     background-color: #68a9c7;
     background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-
   }
   .arrow-red-down{
     background-color: #68a9c7;
     background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-
   }
 }

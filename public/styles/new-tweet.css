@@ -15,19 +15,22 @@
   border-right: none;
   border-bottom: 5px solid black;
   border-left: none;
-
   width: 100%;
 }
 
 .form-inline button {
   background-color: #4056A1;
   border: none;
+  border-radius: 16px;
   color: white;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
 
+.form-inline button:hover {
+  background-color: #68a9c7;
 }
 
 .button-output {
@@ -36,7 +39,6 @@
   padding-top: 1em;
   font-family: 'Bungee', cursive;
   font-size: 1.5em;
-
 }
 
 .counter {
