@@ -39,5 +39,7 @@ nav .nav-right {
 
 .arrow-red-down {
   color: red;
-
+  background-color: #4056A1;
+  border: none;
+  padding-bottom: 5px;
 }

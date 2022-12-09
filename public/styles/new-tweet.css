@@ -43,5 +43,9 @@
   color: black;
 }
 
-
-
+/* Error message */
+.error-massage {
+  border: 3px solid #ff0000;
+  padding: 5px;
+  width:fit-content;
+}

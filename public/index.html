@@ -43,6 +43,8 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/arrow-move.js"></script>
+
 
   </head>
 
@@ -53,7 +55,8 @@
       <div class="nav-right">
         <span class="tweeter-description"><strong>Write </strong> a new tweet<br>
         </span>
-        <i class="fa-solid fa-angles-down arrow-red-down"></i>
+        <button class="fa arrow-red-down" id="arrow"></button>
+        <!--<i class="fa-solid fa-angles-down arrow-red-down" id="arrow"></i>-->
       </div>
     </nav>
 
@@ -71,7 +74,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet" id="tweet-form">
         <!--<h2>Compose Tweet</h2>-->
         <form class="form-inline" action="/tweets" method="POST">
           <div class="error-massage" id="error">
@@ -80,7 +83,7 @@
           <label for="tweet-text">What are you humming about?</label><br>
           <textarea class="tweet-box" name="text"></textarea>
           <div class="button-output">
-            <button class="tweet-button" type="submit" >Tweet</button>
+            <button class="tweet-button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>

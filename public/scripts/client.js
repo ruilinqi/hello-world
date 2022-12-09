@@ -38,18 +38,36 @@ $(document).ready(function() {
 //console.log(tweetData.user.avatars);
 //console.log('tweet', $tweet); // to see what it looks like
 //$(`#tweets-container`).append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-    // $(".error-massage").css(visibility, hidden);
-    // $(".error-massage").css(display, none);
-  /*
-  function demoDisplay() {
-    document.getElementById("error").style.visibility = "hidden";
+
+// Not display the new tweet form at first
+function formDisplay() {
+  document.getElementById("tweet-form").style.display = "none";
+}
+formDisplay();
+
+// Click the Arrow button to display the tweet form
+const arrowBtn = document.getElementById("arrow"); {
+  arrowBtn.addEventListener("click", function() {
+    console.log("click the arrow");
+    $("#tweet-form").slideDown("fast");
+    //document.getElementById("tweet-form").style.display = "block";
+  });
+}
+
+  // Not display the error message at first
+  function errorDisplay() {
+    document.getElementById("error").style.display = "none";
   }
-  demoDisplay();
+  errorDisplay();
 
-  const showErrorEle = function () {
-
+  const showErrorEle = function(error) {
+    $(".error-massage").text(error);
+    $(".error-massage").slideDown("slow");
+    setTimeout(() => {
+      $(".error-massage").slideUp("slow");
+    }, 5000);
   };
-*/
+
   // Render each tweet
   const renderTweets = function(tweetArr) {
     var $tweets = $('#tweets-container').empty();
@@ -81,17 +99,20 @@ $(document).ready(function() {
     event.preventDefault(); // Prevent the default form submission behaviour
   
     
-/*
-    // In case there's no input or 
+
+    // In case there's no input or characters number gets exceed
     let inputValue = $(".tweet-box").val();
     if (!inputValue) {
       //alert("No input. Please type words in the textbox.");
-      $(".slide-down").slideDown("slow");
+      showErrorEle("⚠️ No input. Please type words in the textbox.");
+      return;
     } else if (inputValue.length > 140) {
-      alert("Please enter within 140 characters. Do not exceed the limited word court.");
-      $(".slide-down").slideDown("slow");
+      //alert("Please enter within 140 characters. Do not exceed the limited word court.");
+      showErrorEle("⚠️ Please enter within 140 characters. Do not exceed the limited word court.");
+      return;
     } 
-      */
+
+    
 
     
     $.ajax({
