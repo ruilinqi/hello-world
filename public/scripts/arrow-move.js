@@ -1,3 +1,4 @@
+/* Arror animation */
 $(document).ready(function() {
   function moveArrow() {
     var a;
