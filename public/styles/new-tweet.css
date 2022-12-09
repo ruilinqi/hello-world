@@ -2,11 +2,6 @@
   padding: 2em 0;
 }
 
-.form-inline label {
-  font-size: 1.5em;
-  font-weight: 600;
-}
-
 .form-inline textarea {
   background-color: #f4f1ec;
   outline: none;
@@ -16,6 +11,8 @@
   border-bottom: 5px solid black;
   border-left: none;
   width: 100%;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .form-inline button {
