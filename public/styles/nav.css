@@ -13,7 +13,7 @@ nav {
 }
 
 .tweeter-title{
-  font-size: 2em;
+  font-size: 50px;
   padding-bottom: 0em;
 
   font-family: 'Bungee', cursive;
@@ -22,9 +22,7 @@ nav {
 }
 nav .tweeter-description {
   color: #FFFFFF;
-  font-size: 1.5em;
-  /*justify-content: flex-start;/* hor */
-
+  font-size: 30px;
 }
 
 nav .nav-right {
@@ -32,14 +30,25 @@ nav .nav-right {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-
 }
-
-
 
 .arrow-red-down {
   color: red;
   background-color: #4056A1;
   border: none;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: #68a9c7;
+    background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+
+  }
+  .arrow-red-down{
+    background-color: #68a9c7;
+    background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+
+  }
 }

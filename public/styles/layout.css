@@ -32,6 +32,23 @@ body {
   width: 90%;
 }
 
+#top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  color: white;
+  background-color: #4056A1;
+  font-family: 'Bungee', cursive;
+  font-size: 18px;
+}
+
+#top:hover {
+  background-color: #68a9c7;
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .layout {

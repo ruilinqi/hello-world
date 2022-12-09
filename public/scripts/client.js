@@ -27,32 +27,28 @@ $(document).ready(function() {
               <a href=""><i class="fas fa-flag"></i></a>
               <a href=""><i class="fas fa-retweet"></i></a>
               <a href=""><i class="fas fa-heart"></i></a>
-            </div> 
+            </div>
           </footer>
         </article>`);
     return $tweet;
   };
 
-
-// Test / driver code (temporary)
-//console.log(tweetData.user.avatars);
-//console.log('tweet', $tweet); // to see what it looks like
-//$(`#tweets-container`).append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
 // Not display the new tweet form at first
-function formDisplay() {
-  document.getElementById("tweet-form").style.display = "none";
-}
-formDisplay();
+// function formDisplay() {
+//   document.getElementById("tweet-form").style.display = "none";
+// }
+// formDisplay();
 
-// Click the Arrow button to display the tweet form
-const arrowBtn = document.getElementById("arrow"); {
-  arrowBtn.addEventListener("click", function() {
-    console.log("click the arrow");
+// Click the Arrow button to display or hide the tweet form
+const arrowBtn = document.getElementById("arrow");
+
+arrowBtn.addEventListener("click", function() {
+  if ($("#tweet-form").is(":hidden")) {
     $("#tweet-form").slideDown("fast");
-    //document.getElementById("tweet-form").style.display = "block";
-  });
-}
+  } else {
+    $("#tweet-form").slideUp("fast");
+  }
+});
 
   // Not display the error message at first
   function errorDisplay() {
@@ -60,6 +56,7 @@ const arrowBtn = document.getElementById("arrow"); {
   }
   errorDisplay();
 
+  // 
   const showErrorEle = function(error) {
     $(".error-massage").text(error);
     $(".error-massage").slideDown("slow");
@@ -79,7 +76,7 @@ const arrowBtn = document.getElementById("arrow"); {
       $tweets.prepend(createdTweet);
     }
   };
- 
+
   // Get new tweets from /tweets, and load it
   const loadTweets = function() {
     $.ajax({
@@ -93,12 +90,16 @@ const arrowBtn = document.getElementById("arrow"); {
       }
     });
   };
-  
+
+  // Scroll to the top
+  $("#top").click(function() {
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+    return false;
+  });
+
   // Submit the form
-  $(".new-tweet form").submit(function(event) {  
+  $(".new-tweet form").submit(function(event) {
     event.preventDefault(); // Prevent the default form submission behaviour
-  
-    
 
     // In case there's no input or characters number gets exceed
     let inputValue = $(".tweet-box").val();
@@ -110,11 +111,9 @@ const arrowBtn = document.getElementById("arrow"); {
       //alert("Please enter within 140 characters. Do not exceed the limited word court.");
       showErrorEle("⚠️ Please enter within 140 characters. Do not exceed the limited word court.");
       return;
-    } 
+    }
 
-    
 
-    
     $.ajax({
       method: "POST",
       url: '/tweets',
@@ -126,7 +125,7 @@ const arrowBtn = document.getElementById("arrow"); {
         $('.counter').text(140);
       }
     });
-    
+
   });
-  loadTweets();   
+  loadTweets();
 });
