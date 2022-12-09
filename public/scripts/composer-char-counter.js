@@ -1,8 +1,5 @@
 $(document).ready(function() {
-  // --- our code goes here ---
-  console.log("document ready");
   let maxChar = 140;
-
   // count the characters in the textbox and turn text to red when extends 140
   $(".new-tweet textarea").on("input", function() {
     let remainingChar = maxChar - $(this).val().length;
