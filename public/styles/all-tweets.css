@@ -51,6 +51,7 @@
 .all-tweets .tweet-text {
   font-weight: 600;
   padding: 20px;
+  word-break: break-all;
 }
 
 .all-tweets .tweet-footer {
