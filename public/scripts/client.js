@@ -4,7 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-
+  // Prevent XSS with Escaping
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   const createTweetElement = function(tweetData) {
     const $tweet = $(`
         <article class="tweet">
@@ -18,7 +24,7 @@ $(document).ready(function() {
           </div>
           </header>
           <section class="tweet-content">
-            <p class="tweet-text">${tweetData.content.text}</p>
+            <p class="tweet-text">${escape(tweetData.content.text)}</p>
 
           </section>
           <footer class="tweet-footer">
